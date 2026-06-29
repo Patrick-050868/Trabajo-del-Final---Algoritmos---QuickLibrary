@@ -83,5 +83,19 @@ public class BinarySearchTree<T extends Comparable<T>> {
             inOrder(node.getRight());
 
         }
-    }    
+    }  
+    // Método público para contar los nodos del árbol
+    public int count() {
+        return count(root);
+    }
+
+    // Método recursivo privado
+    private int count(BSTNode<T> node) {
+
+        if (node == null) {
+            return 0;
+        }
+
+        return 1 + count(node.getLeft()) + count(node.getRight());
+    }
 }

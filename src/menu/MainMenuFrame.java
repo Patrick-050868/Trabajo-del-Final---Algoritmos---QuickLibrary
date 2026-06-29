@@ -40,4 +40,20 @@ public class MainMenuFrame extend JFrame {
     add(panel);
     setVisible(true);
   }
+
+  private void ejecutar(String opcion) {
+        switch (opcion) {
+            case "Registrar libro":
+              String codigo = JOptionPane.showInputDialog("Código:");
+              String titulo = JOptionPane.showInputDialog("Título:");
+              String autor = JOptionPane.showInputDialog("Autor:");
+              String categoria = JOptionPane.showInputDialog("Categoría:");
+              int anio = Integer.parseInt(JOptionPane.showInputDialog("Año:"));
+          
+              bibliotecaService.registrarLibro(codigo, titulo, autor, categoria, anio);
+          
+              JOptionPane.showMessageDialog(this, "Libro registrado");
+              break;
+        }
+  }
 }

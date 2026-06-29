@@ -1,29 +1,28 @@
 package structures.queue;
 
 public class QueueNode<T> {
-	private T dato;
-	private QueueNode<T> next;
-	
-	public QueueNode(T _dato) {
-		this.dato = _dato;
-		this.next = null;
-	}
 
-	public T getDato() {
-		return dato;
-	}
+    private T data;
+    private QueueNode<T> next;
 
-	public void setDato(T dato) {
-		this.dato = dato;
-	}
+    public QueueNode(T data) {
+        this.data = data;
+        this.next = null;
+    }
 
-	public QueueNode getNext() {
-		return next;
-	}
+    public T getData() {
+        return data;
+    }
 
-	public void setNext(QueueNode next) {
-		this.next = next;
-	}
-	
-	
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public QueueNode<T> getNext() {
+        return next;
+    }
+
+    public void setNext(QueueNode<T> next) {
+        this.next = next;
+    }
 }

@@ -65,4 +65,23 @@ public class BinarySearchTree<T extends Comparable<T>> {
     
         return search(node.getRight(), data);
     }
+   
+    // Método público para recorrer el árbol en inorden
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    // Método recursivo privado
+    private void inOrder(BSTNode<T> node) {
+
+        if (node != null) {
+
+            inOrder(node.getLeft());
+
+            System.out.println(node.getData());
+
+            inOrder(node.getRight());
+
+        }
+    }    
 }

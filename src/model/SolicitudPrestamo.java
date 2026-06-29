@@ -31,7 +31,26 @@ public class SolicitudPrestamo {
   {
     this.nombreestudiante = nombre estudiante;
   }
-  public 
-  
-
+  public String getcodigolibro()
+  {
+   return codigolibro; 
+  }
+  public void setcodigolibro(String nombreestudiante)
+  {
+    this.codigolibro = codigolibro;
+  }
+  public LocalDate getsolicitudprestamo()
+  {
+    return solicitudprestamo;
+  }
+  public void setsolicitudprestamo(LocalDate solicitudprestamo)
+  {
+    this.solicitudprestamo = solicitudprestamo;
+  }
+  @Override
+  public String toString ()
+  {
+    return String.format("estudiante:[%s] %s ---- libro:%s ---- fecha:%s",codigoestudiante,nombreestudiante,codigoestudiante,codigolibro,fechasolicitud );
+  }
 }
+

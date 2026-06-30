@@ -3,8 +3,21 @@ package menu;
 import javax.swing.*;
 import java.awt.*;
 
+import service.BibliotecaService;
+import service.PrestamoService;
+import service.ReporteService;
+
 public class MainMenuFrame extend JFrame {
+
+  private BibliotecaService bibliotecaService;
+  private PrestamoService prestamoService;
+  private ReporteService reporteService;
+  
   public MainMenuFrame() {
+    bibliotecaService = new BibliotecaService();
+    prestamoService = new PrestamoService();
+    reporteService = new ReporteService();
+
     setTitle("QUICKLIBRARY");
     setSixe(500,600);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,6 +90,42 @@ public class MainMenuFrame extend JFrame {
               String resultado = bibliotecaService.buscarPorCategoria(cat);
 
               JOptionPane.showMessageDialog(this, resultado);
+              break;
+      
+            case "Modificar libro":
+              String codigoMod = JOptionPane.showInputDialog("Código del libro:");
+
+              String nuevoTitulo = JOptionPane.showInputDialog("Nuevo título:");
+              String nuevoAutor = JOptionPane.showInputDialog("Nuevo autor:");
+              String nuevaCategoria = JOptionPane.showInputDialog("Nueva categoría:");
+
+              bibliotecaService.modificarLibro(codigoMod, nuevoTitulo, nuevoAutor, nuevaCategoria);
+
+              JOptionPane.showMessageDialog(this, "Libro modificado");
+              break;
+      
+            case "Eliminar libro":
+              String codigoEliminar = JOptionPane.showInputDialog("Código:");
+          
+              bibliotecaService.eliminarLibro(codigoEliminar);
+          
+              JOptionPane.showMessageDialog(this, "Libro eliminado");
+              break;
+
+            case "Registrar solicitud":
+              String codEstudiante = JOptionPane.showInputDialog("Código estudiante:");
+              String nombre = JOptionPane.showInputDialog("Nombre:");
+              String codLibro = JOptionPane.showInputDialog("Código libro:");
+          
+              prestamoService.registrarSolicitud(codEstudiante, nombre, codLibro);
+          
+              JOptionPane.showMessageDialog(this, "Solicitud registrada");
+              break;
+      
+            case "Mostrar cola":
+              String cola = prestamoService.mostrarCola();
+          
+              JOptionPane.showMessageDialog(this, cola);
               break;
         }
   }

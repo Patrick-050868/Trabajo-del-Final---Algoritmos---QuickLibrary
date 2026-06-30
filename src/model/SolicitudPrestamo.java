@@ -7,50 +7,42 @@ public class SolicitudPrestamo {
   private String codigolibro;
   private String LocalDate fechasolicitud;
 
-  public solicitudprestamo (String codigoestudiante,String nombreestudiante, String codigolibro)
-  {
-    this.codigoestudiante = codigoestudiante;
-    this.nombreestudiante = nombreestudiante;
-    this.codigolibro = codigolibro;
-    this.fechasolicitud = LocalDate.now();
+  public solicitudprestamo (String codigoestudiante,String nombreestudiante, String codigolibro){
+      this.codigoestudiante = codigoestudiante;
+      this.nombreestudiante = nombreestudiante;
+      this.codigolibro = codigolibro;
+      this.fechasolicitud = LocalDate.now();
   }
 
   public String getcodigoestudiante(){
-    return codigoestudiante;
+      return codigoestudiante;
   }
 
   public void setcodigoestudiante(){
-    this.codigoestudiante = codigoestudiante;
+      this.codigoestudiante = codigoestudiante;
   
   }
-  public String getnombreestudiante()
-  {
-    return nombreestudiante;
+  public String getnombreestudiante(){
+      return nombreestudiante;
   }
-  public void setnombreestudiante()
-  {
-    this.nombreestudiante = nombre estudiante;
+  public void setnombreestudiante(){
+      this.nombreestudiante = nombre estudiante;
   }
-  public String getcodigolibro()
-  {
-   return codigolibro; 
+  public String getcodigolibro(){
+     return codigolibro; 
   }
-  public void setcodigolibro(String nombreestudiante)
-  {
-    this.codigolibro = codigolibro;
+  public void setcodigolibro(String nombreestudiante){
+      this.codigolibro = codigolibro;
   }
-  public LocalDate getsolicitudprestamo()
-  {
-    return solicitudprestamo;
+  public LocalDate getsolicitudprestamo(){
+      return solicitudprestamo;
   }
-  public void setsolicitudprestamo(LocalDate solicitudprestamo)
-  {
-    this.solicitudprestamo = solicitudprestamo;
+  public void setsolicitudprestamo(LocalDate solicitudprestamo){
+      this.solicitudprestamo = solicitudprestamo;
   }
   @Override
-  public String toString ()
-  {
-    return String.format("estudiante:[%s] %s ---- libro:%s ---- fecha:%s",codigoestudiante,nombreestudiante,codigoestudiante,codigolibro,fechasolicitud );
+  public String toString (){
+      return String.format("estudiante:[%s] %s ---- libro:%s ---- fecha:%s",codigoestudiante,nombreestudiante,codigoestudiante,codigolibro,fechasolicitud );
   }
 }
 

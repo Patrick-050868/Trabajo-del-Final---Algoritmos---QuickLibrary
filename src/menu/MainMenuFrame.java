@@ -127,6 +127,32 @@ public class MainMenuFrame extend JFrame {
           
               JOptionPane.showMessageDialog(this, cola);
               break;
+
+            case "Atender siguiente":
+              String mensaje = prestamoService.atenderSiguiente();
+          
+              JOptionPane.showMessageDialog(this, mensaje);
+              break;
+
+            case "Atender siguiente":
+              String mensaje = prestamoService.atenderSiguiente();
+          
+              JOptionPane.showMessageDialog(this, mensaje);
+              break;
+      
+            case "Mostrar reporte":
+              String reporte = reporteService.generarReporte();
+          
+              JTextArea reporteArea = new JTextArea(15, 40);
+              reporteArea.setText(reporte);
+              reporteArea.setEditable(false);
+          
+              JOptionPane.showMessageDialog(this, new JScrollPane(reporteArea));
+              break;
+
+            case "Salir":
+              System.exit(0);
+              break;
         }
   }
 }
